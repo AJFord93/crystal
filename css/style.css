@@ -1,0 +1,40 @@
+body {
+	background-image: url("../images/zelda_bg.png");
+	z-index: 0;
+	margin: 0;
+}
+
+header {
+	font-size: 3em;
+	color: white;
+	margin-left: 7%;
+}
+
+.rupee {
+	width: 10%;
+	height: 10%;
+	margin-left: 3em;
+	margin-right: 3em;
+	
+
+}
+
+.rupee-contain {
+	position: fixed;
+	top: 50em;
+	margin: 3em;
+}
+
+#random-number {
+	font-family: arial;
+	color: black;
+	font-size: 2em;
+}
+
+.panel, #rupee-board {
+	margin: 10%;
+	position: relative;
+	left: 2em;
+
+}
+
