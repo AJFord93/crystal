@@ -18,6 +18,13 @@ var score = 0;
 var wins = 0;
 var loss = 0;
 
+
+var audio = new Audio('yay.wav');
+var rupeeaud = new Audio('rupee.wav')
+var nope = new Audio('wrong.wav')
+
+
+
 var randomNum = Math.floor(Math.random() * 31) + 50;
 console.log(randomNum);
 
@@ -29,6 +36,7 @@ function newNum(){
 
  function check(){
 		if(score === randomNum){
+			audio.play();
 	alert("You win!");
 	wins++
 	$("#wins").html(wins);
@@ -36,6 +44,7 @@ function newNum(){
 	
 
 } else if(score > randomNum){ 
+	nope.play();
 	alert("You Lose!");
 	loss++;
 	$("#losses").html(loss);
@@ -69,24 +78,28 @@ $("#random-number").html(randomNum);
 // Click Functionality 
 
 $("#rupee-silver").on("click", function(){
+	rupeeaud.play();
 	score ++;
 	update();
 	check();
 });
 
 $("#rupee-red").on("click", function(){
+	rupeeaud.play();
 	score += 5;
 	update();
 	check();
 });
 
 $("#rupee-purple").on("click", function(){
+	rupeeaud.play();
 	score += 2;
 	update();
 	check();
 });
 
 $("#rupee-blue").on("click", function(){
+	rupeeaud.play();
 	score += 10;
 	update();
 	check();
