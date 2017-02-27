@@ -15,20 +15,31 @@
 $(document).ready(function(){
 
 var score = 0;
+var wins = 0;
+var loss = 0;
 
 var randomNum = Math.floor(Math.random() * 31) + 50;
 console.log(randomNum);
+
+function newNum(){
+	Math.floor(Math.random() * 31) + 50;
+}
 
 // Check if win or lose
 
  function check(){
 		if(score === randomNum){
 	alert("You win!");
+	wins++
+	$("#wins").html(wins);
 	resetScore();
 	
 
 } else if(score > randomNum){ 
 	alert("You Lose!");
+	loss++;
+	$("#losses").html(loss);
+	resetScore();
 
 	}
 }
@@ -39,6 +50,10 @@ function resetScore(){
 	score = 0;
 	$("#random-number").html(randomNum);
 	$("#myScore").html(score);
+	update();
+
+	$("#random-number").html(newNum);
+	newNum();
 
 }
 
